@@ -1,0 +1,166 @@
+{
+  "fach": "Geschichte",
+  "items": [
+    {
+      "id": "weimar01",
+      "thema": "Weimarer Republik",
+      "frage": "Wann wurde die Weimarer Verfassung verabschiedet?",
+      "antwort": "11. August 1919",
+      "stufe": 0
+    },
+    {
+      "id": "weimar02",
+      "thema": "Weimarer Republik",
+      "frage": "Wer war der erste Reichspräsident?",
+      "antwort": "Friedrich Ebert",
+      "stufe": 0
+    },
+    {
+      "id": "weimar03",
+      "thema": "Weimarer Republik",
+      "frage": "Wie nennt man die Krise durch extreme Geldentwertung 1923?",
+      "antwort": "Hyperinflation",
+      "stufe": 0
+    },
+    {
+      "id": "renaiss01",
+      "thema": "Renaissance",
+      "frage": "In welchem Land begann die Renaissance?",
+      "antwort": "Italien",
+      "stufe": 0
+    },
+    {
+      "id": "renaiss02",
+      "thema": "Renaissance",
+      "frage": "Wer malte die Mona Lisa?",
+      "antwort": "Leonardo da Vinci",
+      "stufe": 0
+    },
+    {
+      "id": "renaiss03",
+      "thema": "Renaissance",
+      "frage": "Welche Erfindung ermöglichte die massenhafte Verbreitung von Büchern?",
+      "antwort": "Der Buchdruck",
+      "stufe": 0
+    },
+    {
+      "id": "neuzeit01",
+      "thema": "Weltbilder der Neuzeit",
+      "frage": "Was besagt das geozentrische Weltbild?",
+      "antwort": "Die Erde bildet den Mittelpunkt des Universums, alle anderen Himmelskörper (Sonne, Mond, Planeten) kreisen um sie.",
+      "stufe": 0
+    },
+    {
+      "id": "neuzeit02",
+      "thema": "Weltbilder der Neuzeit",
+      "frage": "Welche antiken Philosophen/Wissenschaftler vertraten das geozentrische Weltbild?",
+      "antwort": "Aristoteles (384–322 v. Chr.) und Ptolemäus (um 100–160 n. Chr.).",
+      "stufe": 0
+    },
+    {
+      "id": "neuzeit03",
+      "thema": "Weltbilder der Neuzeit",
+      "frage": "Woher kommt der Begriff 'geozentrisch'?",
+      "antwort": "Vom griechischen Wort 'geo' = Erde.",
+      "stufe": 0
+    },
+    {
+      "id": "neuzeit04",
+      "thema": "Weltbilder der Neuzeit",
+      "frage": "Was besagt das heliozentrische Weltbild?",
+      "antwort": "Die Sonne bildet das Zentrum, die Erde kreist zusammen mit den anderen Planeten um sie.",
+      "stufe": 0
+    },
+    {
+      "id": "neuzeit05",
+      "thema": "Weltbilder der Neuzeit",
+      "frage": "Wer entwickelte im 16. Jahrhundert das heliozentrische Weltbild?",
+      "antwort": "Nikolaus Kopernikus (1473–1543).",
+      "stufe": 0
+    },
+    {
+      "id": "neuzeit06",
+      "thema": "Weltbilder der Neuzeit",
+      "frage": "Welchen Beruf übte Kopernikus neben der Astronomie aus?",
+      "antwort": "Er war polnischer Priester (Geistlicher).",
+      "stufe": 0
+    },
+    {
+      "id": "neuzeit07",
+      "thema": "Weltbilder der Neuzeit",
+      "frage": "Warum wagte Kopernikus lange nicht, seine Erkenntnisse zu veröffentlichen?",
+      "antwort": "Weil seine Beobachtungen den Lehren der Kirche widersprachen.",
+      "stufe": 0
+    },
+    {
+      "id": "neuzeit08",
+      "thema": "Weltbilder der Neuzeit",
+      "frage": "Wann erschien Kopernikus' Buch und was geschah damit?",
+      "antwort": "Es erschien 30 Jahre nach seiner Entdeckung, am Tag seines Todes, und wurde 1616 von der Kirche verboten.",
+      "stufe": 0
+    },
+    {
+      "id": "neuzeit09",
+      "thema": "Weltbilder der Neuzeit",
+      "frage": "Wer bestätigte ein halbes Jahrhundert nach Kopernikus dessen Aussagen?",
+      "antwort": "Galileo Galilei (1564–1642) durch eigene astronomische Beobachtungen.",
+      "stufe": 0
+    },
+    {
+      "id": "neuzeit10",
+      "thema": "Weltbilder der Neuzeit",
+      "frage": "Womit führte Galilei seine astronomischen Forschungen durch?",
+      "antwort": "Mit einem selbst gebauten Fernrohr mit 20-facher Vergrößerung (gebaut 1609).",
+      "stufe": 0
+    },
+    {
+      "id": "neuzeit11",
+      "thema": "Weltbilder der Neuzeit",
+      "frage": "Wo lehrte Galileo Galilei Mathematik, bevor er 1610 seine Beobachtungen veröffentlichte?",
+      "antwort": "An der Universität von Padua.",
+      "stufe": 0
+    },
+    {
+      "id": "neuzeit12",
+      "thema": "Weltbilder der Neuzeit",
+      "frage": "Was geschah 1632/1633 mit Galilei?",
+      "antwort": "1632 wurde er nach Rom befohlen und verhaftet, 1633 verurteilt, seine 'bibelfeindlichen' Ansichten zu widerrufen.",
+      "stufe": 0
+    },
+    {
+      "id": "neuzeit13",
+      "thema": "Weltbilder der Neuzeit",
+      "frage": "Wie verbrachte Galilei den Rest seines Lebens nach dem Prozess?",
+      "antwort": "Unter Hausarrest bis zu seinem Tod, unterhielt aber weiter Briefkontakt zu Wissenschaftlern im Ausland und veröffentlichte zwei weitere Schriften.",
+      "stufe": 0
+    },
+    {
+      "id": "neuzeit14",
+      "thema": "Weltbilder der Neuzeit",
+      "frage": "Wann erkannte die katholische Kirche Galileis Entdeckung offiziell an?",
+      "antwort": "Erst gegen Ende des 20. Jahrhunderts.",
+      "stufe": 0
+    },
+    {
+      "id": "neuzeit15",
+      "thema": "Weltbilder der Neuzeit",
+      "frage": "Welche zwei Entwicklungen der Renaissance waren Voraussetzung für den Wandel vom geo- zum heliozentrischen Weltbild?",
+      "antwort": "Die Wiederentdeckung antiker Ideen und ein Wandel des Menschenbilds mit verstärktem Interesse an der Wissenschaft.",
+      "stufe": 0
+    },
+    {
+      "id": "neuzeit16",
+      "thema": "Weltbilder der Neuzeit",
+      "frage": "Welcher Zeitraum wird als 'frühe Neuzeit' bezeichnet?",
+      "antwort": "Etwa 1500 bis zur Französischen Revolution 1789.",
+      "stufe": 0
+    },
+    {
+      "id": "neuzeit17",
+      "thema": "Weltbilder der Neuzeit",
+      "frage": "Mit welchen drei geistesgeschichtlichen Strömungen wird die Abgrenzung der Neuzeit vom Mittelalter begründet?",
+      "antwort": "Humanismus, Renaissance und Reformation.",
+      "stufe": 0
+    }
+  ]
+}
