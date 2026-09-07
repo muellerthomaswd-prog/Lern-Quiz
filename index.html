@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lernquiz</title>
+<meta name="theme-color" content="#12141C">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- Kopfzeile -->
+  <header class="topbar">
+    <button id="btnBack" class="iconbtn" hidden aria-label="Zurück">←</button>
+    <h1 id="topbarTitle">Lernquiz</h1>
+    <div class="streak" id="streakBadge" hidden>🔥 <span id="streakCount">0</span></div>
+  </header>
+
+  <main id="view"></main>
+
+</div>
+
+<template id="tpl-fach-card">
+  <button class="fach-card">
+    <span class="fach-name"></span>
+    <span class="fach-meta"></span>
+    <div class="fach-bar"><div class="fach-bar-fill"></div></div>
+  </button>
+</template>
+
+<template id="tpl-mode-card">
+  <button class="mode-card">
+    <span class="mode-icon"></span>
+    <span class="mode-name"></span>
+    <span class="mode-desc"></span>
+  </button>
+</template>
+
+<script src="app.js"></script>
+</body>
+</html>

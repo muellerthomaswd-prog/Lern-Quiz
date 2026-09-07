@@ -1,0 +1,17 @@
+{
+  "fach": "Spanisch",
+  "items": [
+    { "id": "sp001", "frage": "el perro", "antwort": "der Hund", "stufe": 0 },
+    { "id": "sp002", "frage": "la casa", "antwort": "das Haus", "stufe": 0 },
+    { "id": "sp003", "frage": "comer", "antwort": "essen", "stufe": 0 },
+    { "id": "sp004", "frage": "beber", "antwort": "trinken", "stufe": 0 },
+    { "id": "sp005", "frage": "el amigo", "antwort": "der Freund", "stufe": 0 },
+    { "id": "sp006", "frage": "la escuela", "antwort": "die Schule", "stufe": 0 },
+    { "id": "sp007", "frage": "grande", "antwort": "groß", "stufe": 0 },
+    { "id": "sp008", "frage": "pequeño", "antwort": "klein", "stufe": 0 },
+    { "id": "sp009", "frage": "el libro", "antwort": "das Buch", "stufe": 0 },
+    { "id": "sp010", "frage": "hablar", "antwort": "sprechen", "stufe": 0 },
+    { "id": "sp011", "frage": "el tiempo", "antwort": "die Zeit / das Wetter", "stufe": 0 },
+    { "id": "sp012", "frage": "la familia", "antwort": "die Familie", "stufe": 0 }
+  ]
+}
