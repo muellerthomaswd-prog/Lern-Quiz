@@ -43,6 +43,8 @@ async function loadFach(filename) {
       id: it.id,
       frage: it.frage,
       antwort: it.antwort,
+      thema: it.thema || null,
+      falsch: Array.isArray(it.falsch) && it.falsch.length ? it.falsch : null,
       baseStufe: it.stufe || 0
     }));
     return { file: filename, fach: json.fach || filename, items };
@@ -97,10 +99,21 @@ function updateStreakBadge() {
   }
 }
 
-function fachFortschritt(fach) {
-  if (!fach.items.length) return 0;
-  const sum = fach.items.reduce((a, it) => a + getStufe(it), 0);
-  return Math.round((sum / (fach.items.length * 5)) * 100);
+function poolFortschritt(items) {
+  if (!items.length) return 0;
+  const sum = items.reduce((a, it) => a + getStufe(it), 0);
+  return Math.round((sum / (items.length * 5)) * 100);
+}
+function fachFortschritt(fach) { return poolFortschritt(fach.items); }
+
+// Liefert die im Fach vorkommenden Themen in erster Auftrittsreihenfolge,
+// oder [] wenn kein Item ein Thema hat bzw. es nur eins gibt.
+function computeThemes(items) {
+  const seen = [];
+  items.forEach(it => {
+    if (it.thema && !seen.includes(it.thema)) seen.push(it.thema);
+  });
+  return seen.length >= 2 ? seen : [];
 }
 
 // Gewichtete Auswahl: niedrige Stufe = deutlich häufiger dran
@@ -136,6 +149,18 @@ function shuffle(arr) {
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
+}
+
+// Liefert 3 falsche Antworten für eine Frage: bevorzugt kuratierte
+// "falsch"-Angaben aus dem JSON (thematisch passend), füllt nur bei
+// Bedarf mit zufälligen Antworten aus dem restlichen Fach auf.
+function distraktorenFuer(item, fachItems) {
+  const eigene = item.falsch ? shuffle(item.falsch).slice(0, 3) : [];
+  if (eigene.length >= 3) return eigene;
+  const belegt = new Set([item.antwort, ...eigene]);
+  const auffuellen = shuffle(fachItems.filter(i => i.id !== item.id && !belegt.has(i.antwort)))
+    .slice(0, 3 - eigene.length).map(i => i.antwort);
+  return [...eigene, ...auffuellen];
 }
 function normalize(s) {
   return (s || "").toLowerCase().trim()
@@ -193,10 +218,52 @@ function renderFachAuswahl() {
       tpl.querySelector(".fach-name").textContent = fach.fach;
       tpl.querySelector(".fach-meta").textContent = fach.items.length + " Inhalte";
       tpl.querySelector(".fach-bar-fill").style.width = fachFortschritt(fach) + "%";
-      btn.addEventListener("click", () => { state.fach = fach; renderModusAuswahl(); });
+      btn.addEventListener("click", () => {
+        state.fach = fach;
+        const themes = computeThemes(fach.items);
+        if (!themes.length) {
+          state.pool = fach.items;
+          state.poolLabel = fach.fach;
+          state.backToPrevious = renderFachAuswahl;
+          renderModusAuswahl();
+        } else {
+          renderThemaAuswahl(fach, themes);
+        }
+      });
       view.appendChild(tpl);
     });
   }, null);
+}
+
+/* ================= Screen: Themen-Auswahl ================= */
+
+function renderThemaAuswahl(fach, themes) {
+  setScreen("thema", () => {
+    topbarTitle.textContent = fach.fach;
+    const p = document.createElement("p");
+    p.className = "intro-line";
+    p.textContent = "Alles gemischt üben, oder ein Thema gezielt?";
+    view.appendChild(p);
+
+    const entries = [
+      { name: "Alle Themen", items: fach.items },
+      ...themes.map(t => ({ name: t, items: fach.items.filter(i => i.thema === t) }))
+    ];
+    entries.forEach(entry => {
+      const tpl = document.getElementById("tpl-fach-card").content.cloneNode(true);
+      const btn = tpl.querySelector(".fach-card");
+      tpl.querySelector(".fach-name").textContent = entry.name;
+      tpl.querySelector(".fach-meta").textContent = entry.items.length + " Inhalte";
+      tpl.querySelector(".fach-bar-fill").style.width = poolFortschritt(entry.items) + "%";
+      btn.addEventListener("click", () => {
+        state.pool = entry.items;
+        state.poolLabel = entry.name === "Alle Themen" ? fach.fach : fach.fach + " · " + entry.name;
+        state.backToPrevious = () => renderThemaAuswahl(fach, themes);
+        renderModusAuswahl();
+      });
+      view.appendChild(tpl);
+    });
+  }, renderFachAuswahl);
 }
 
 /* ================= Screen: Modus-Auswahl ================= */
@@ -210,7 +277,7 @@ const MODES = [
 
 function renderModusAuswahl() {
   setScreen("modus", () => {
-    topbarTitle.textContent = state.fach.fach;
+    topbarTitle.textContent = state.poolLabel;
     const grid = document.createElement("div");
     grid.className = "mode-grid";
     MODES.forEach(m => {
@@ -223,11 +290,11 @@ function renderModusAuswahl() {
       grid.appendChild(tpl);
     });
     view.appendChild(grid);
-  }, renderFachAuswahl);
+  }, state.backToPrevious || renderFachAuswahl);
 }
 
 function startMode(modeId) {
-  const items = state.fach.items;
+  const items = state.pool;
   if (!items.length) return;
   if (modeId === "zeit") { renderZeitModus(); return; }
   const round = pickRound(items, ROUND_SIZE);
@@ -261,7 +328,7 @@ function nextInRound() {
 
 function renderMC() {
   setScreen("quiz", () => {
-    topbarTitle.textContent = state.fach.fach;
+    topbarTitle.textContent = state.poolLabel;
     const item = state.round.items[state.round.idx];
     view.appendChild(roundProgressBar());
 
@@ -270,9 +337,7 @@ function renderMC() {
     card.innerHTML = `<div class="quiz-frage">${escapeHtml(item.frage)}</div>`;
     view.appendChild(card);
 
-    const others = shuffle(state.fach.items.filter(i => i.id !== item.id))
-      .slice(0, 3).map(i => i.antwort);
-    const options = shuffle([item.antwort, ...others]);
+    const options = shuffle([item.antwort, ...distraktorenFuer(item, state.fach.items)]);
 
     const wrap = document.createElement("div");
     wrap.className = "answers";
@@ -310,7 +375,7 @@ function renderMC() {
 
 function renderKarte() {
   setScreen("quiz", () => {
-    topbarTitle.textContent = state.fach.fach;
+    topbarTitle.textContent = state.poolLabel;
     const item = state.round.items[state.round.idx];
     view.appendChild(roundProgressBar());
 
@@ -358,7 +423,7 @@ function renderKarte() {
 
 function renderTippen() {
   setScreen("quiz", () => {
-    topbarTitle.textContent = state.fach.fach;
+    topbarTitle.textContent = state.poolLabel;
     const item = state.round.items[state.round.idx];
     view.appendChild(roundProgressBar());
 
@@ -408,7 +473,7 @@ function renderTippen() {
 /* ================= Modus: Zeit-Modus ================= */
 
 function renderZeitModus() {
-  const items = state.fach.items;
+  const items = state.pool;
   let timeLeft = 60;
   let score = 0, wrong = 0;
   let timer = null;
@@ -416,8 +481,7 @@ function renderZeitModus() {
 
   function nextQuestion() {
     current = pickRound(items, 1)[0];
-    const others = shuffle(items.filter(i => i.id !== current.id)).slice(0, 3).map(i => i.antwort);
-    const options = shuffle([current.antwort, ...others]);
+    const options = shuffle([current.antwort, ...distraktorenFuer(current, state.fach.items)]);
     renderFrame(options);
   }
 
@@ -459,7 +523,7 @@ function renderZeitModus() {
   }
 
   setScreen("quiz", () => {
-    topbarTitle.textContent = state.fach.fach + " · Zeit-Modus";
+    topbarTitle.textContent = state.poolLabel + " · Zeit-Modus";
     nextQuestion();
     timer = setInterval(() => {
       timeLeft--;
@@ -491,7 +555,7 @@ function renderErgebnis(fromZeit) {
     const stats = document.createElement("div");
     stats.className = "stat-row";
     stats.innerHTML = `
-      <div class="stat-box"><div class="n">${fachFortschritt(state.fach)}%</div><div class="l">Fach-Fortschritt</div></div>
+      <div class="stat-box"><div class="n">${poolFortschritt(state.pool)}%</div><div class="l">Fortschritt hier</div></div>
       <div class="stat-box"><div class="n">${r.falsch}</div><div class="l">Noch üben</div></div>`;
     view.appendChild(stats);
 
