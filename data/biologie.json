@@ -1,0 +1,245 @@
+{
+  "fach": "Biologie",
+  "items": [
+    {
+      "id": "zelle01",
+      "thema": "Aufbau der Pflanzenzelle",
+      "frage": "Welche Struktur gibt der Pflanzenzelle ihre feste Form und Stabilität?",
+      "antwort": "Die Zellwand.",
+      "falsch": [
+        "Die Zellmembran.",
+        "Die Vakuole.",
+        "Der Zellkern."
+      ],
+      "stufe": 0
+    },
+    {
+      "id": "zelle02",
+      "thema": "Aufbau der Pflanzenzelle",
+      "frage": "Aus welchem Stoff besteht die Zellwand hauptsächlich?",
+      "antwort": "Zellulose.",
+      "falsch": [
+        "Chitin.",
+        "Eiweiß.",
+        "Fett."
+      ],
+      "stufe": 0
+    },
+    {
+      "id": "zelle03",
+      "thema": "Aufbau der Pflanzenzelle",
+      "frage": "Welche Aufgabe hat die Zellmembran?",
+      "antwort": "Sie reguliert, welche Stoffe in die Zelle hinein- oder herausgelangen.",
+      "falsch": [
+        "Sie gibt der Zelle ihre feste Form.",
+        "Sie speichert Wasser und Nährstoffe.",
+        "Sie enthält die Erbinformation."
+      ],
+      "stufe": 0
+    },
+    {
+      "id": "zelle04",
+      "thema": "Aufbau der Pflanzenzelle",
+      "frage": "Wie nennt man die Grundsubstanz, in der die Zellorganellen liegen?",
+      "antwort": "Zellplasma (Zytoplasma).",
+      "falsch": [
+        "Zellsaft.",
+        "Zellwand.",
+        "Chlorophyll."
+      ],
+      "stufe": 0
+    },
+    {
+      "id": "zelle05",
+      "thema": "Aufbau der Pflanzenzelle",
+      "frage": "Was ist im Zellkern gespeichert?",
+      "antwort": "Die Erbinformation (DNA).",
+      "falsch": [
+        "Die Energie der Zelle.",
+        "Das Wasser der Zelle.",
+        "Der Blattgrünfarbstoff."
+      ],
+      "stufe": 0
+    },
+    {
+      "id": "zelle06",
+      "thema": "Aufbau der Pflanzenzelle",
+      "frage": "Welche Aufgabe hat die Vakuole in der Pflanzenzelle?",
+      "antwort": "Sie speichert Wasser und Nährstoffe und sorgt für den Zelldruck.",
+      "falsch": [
+        "Sie betreibt die Photosynthese.",
+        "Sie gibt der Zelle ihre Form.",
+        "Sie speichert die Erbinformation."
+      ],
+      "stufe": 0
+    },
+    {
+      "id": "zelle07",
+      "thema": "Aufbau der Pflanzenzelle",
+      "frage": "Wie nennt man den Innendruck, den die Vakuole auf die Zellwand ausübt?",
+      "antwort": "Turgordruck (Turgor).",
+      "falsch": [
+        "Osmosedruck.",
+        "Zellatmung.",
+        "Diffusion."
+      ],
+      "stufe": 0
+    },
+    {
+      "id": "zelle08",
+      "thema": "Aufbau der Pflanzenzelle",
+      "frage": "Was passiert mit einer Pflanze, wenn der Turgordruck durch Wassermangel sinkt?",
+      "antwort": "Sie welkt.",
+      "falsch": [
+        "Sie wächst schneller.",
+        "Sie betreibt mehr Photosynthese.",
+        "Sie bildet mehr Chlorophyll."
+      ],
+      "stufe": 0
+    },
+    {
+      "id": "zelle09",
+      "thema": "Aufbau der Pflanzenzelle",
+      "frage": "In welchem Zellorganell findet die Photosynthese statt?",
+      "antwort": "In den Chloroplasten.",
+      "falsch": [
+        "In den Mitochondrien.",
+        "Im Zellkern.",
+        "In der Vakuole."
+      ],
+      "stufe": 0
+    },
+    {
+      "id": "zelle10",
+      "thema": "Aufbau der Pflanzenzelle",
+      "frage": "Welcher grüne Farbstoff befindet sich in den Chloroplasten?",
+      "antwort": "Chlorophyll.",
+      "falsch": [
+        "Karotin.",
+        "Melanin.",
+        "Hämoglobin."
+      ],
+      "stufe": 0
+    },
+    {
+      "id": "zelle11",
+      "thema": "Aufbau der Pflanzenzelle",
+      "frage": "Was entsteht bei der Photosynthese aus Wasser und Kohlenstoffdioxid?",
+      "antwort": "Traubenzucker (Glukose) und Sauerstoff.",
+      "falsch": [
+        "Eiweiß und Stickstoff.",
+        "Fett und Kohlenstoff.",
+        "Stärke und Wasserstoff."
+      ],
+      "stufe": 0
+    },
+    {
+      "id": "zelle12",
+      "thema": "Aufbau der Pflanzenzelle",
+      "frage": "Welches Zellorganell wird als \"Kraftwerk der Zelle\" bezeichnet?",
+      "antwort": "Die Mitochondrien.",
+      "falsch": [
+        "Die Chloroplasten.",
+        "Der Zellkern.",
+        "Die Ribosomen."
+      ],
+      "stufe": 0
+    },
+    {
+      "id": "zelle13",
+      "thema": "Aufbau der Pflanzenzelle",
+      "frage": "Was passiert bei der Zellatmung?",
+      "antwort": "Die Zelle gewinnt Energie aus Traubenzucker mithilfe von Sauerstoff.",
+      "falsch": [
+        "Die Wurzel nimmt Wasser auf.",
+        "Es wird Chlorophyll gebildet.",
+        "Wasserdampf wird über die Blätter abgegeben."
+      ],
+      "stufe": 0
+    },
+    {
+      "id": "zelle14",
+      "thema": "Aufbau der Pflanzenzelle",
+      "frage": "Welches Zellorganell ist der Ort der Eiweißherstellung (Proteinbiosynthese)?",
+      "antwort": "Die Ribosomen.",
+      "falsch": [
+        "Der Golgi-Apparat.",
+        "Die Mitochondrien.",
+        "Die Vakuole."
+      ],
+      "stufe": 0
+    },
+    {
+      "id": "zelle15",
+      "thema": "Aufbau der Pflanzenzelle",
+      "frage": "Welche Aufgabe hat das endoplasmatische Retikulum (ER) in der Zelle?",
+      "antwort": "Es transportiert und verarbeitet Stoffe innerhalb der Zelle.",
+      "falsch": [
+        "Es speichert die Erbinformation.",
+        "Es betreibt die Photosynthese.",
+        "Es gibt der Zelle ihre Stabilität."
+      ],
+      "stufe": 0
+    },
+    {
+      "id": "zelle16",
+      "thema": "Aufbau der Pflanzenzelle",
+      "frage": "Welches Zellorganell verpackt und versendet Stoffe aus der Zelle?",
+      "antwort": "Der Golgi-Apparat.",
+      "falsch": [
+        "Der Zellkern.",
+        "Die Chloroplasten.",
+        "Die Zellwand."
+      ],
+      "stufe": 0
+    },
+    {
+      "id": "zelle17",
+      "thema": "Aufbau der Pflanzenzelle",
+      "frage": "Nenne drei Bestandteile, die eine Pflanzenzelle von einer tierischen Zelle unterscheiden.",
+      "antwort": "Zellwand, große Vakuole und Chloroplasten.",
+      "falsch": [
+        "Zellkern, Zytoplasma und Zellmembran.",
+        "Mitochondrien, Ribosomen und ER.",
+        "Golgi-Apparat, Zellkern und Zellmembran."
+      ],
+      "stufe": 0
+    },
+    {
+      "id": "zelle18",
+      "thema": "Aufbau der Pflanzenzelle",
+      "frage": "Welche Zellbestandteile besitzen sowohl Pflanzen- als auch Tierzellen?",
+      "antwort": "Zellmembran, Zytoplasma, Zellkern und Mitochondrien.",
+      "falsch": [
+        "Zellwand und Chloroplasten.",
+        "Nur die Vakuole.",
+        "Nur die Zellwand."
+      ],
+      "stufe": 0
+    },
+    {
+      "id": "zelle19",
+      "thema": "Aufbau der Pflanzenzelle",
+      "frage": "Wer entdeckte 1665 als Erster Zellen unter dem Mikroskop (an Korkgewebe)?",
+      "antwort": "Robert Hooke.",
+      "falsch": [
+        "Matthias Schleiden.",
+        "Theodor Schwann.",
+        "Rudolf Virchow."
+      ],
+      "stufe": 0
+    },
+    {
+      "id": "zelle20",
+      "thema": "Aufbau der Pflanzenzelle",
+      "frage": "Wie lautet die Kernaussage der Zelltheorie?",
+      "antwort": "Alle Lebewesen bestehen aus Zellen, der kleinsten Baueinheit des Lebens.",
+      "falsch": [
+        "Nur Pflanzen bestehen aus Zellen.",
+        "Zellen entstehen nur durch Photosynthese.",
+        "Jedes Lebewesen hat nur eine einzige Zelle."
+      ],
+      "stufe": 0
+    }
+  ]
+}
